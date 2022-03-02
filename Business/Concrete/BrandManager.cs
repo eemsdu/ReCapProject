@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constans;
 using Core2.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -21,12 +22,38 @@ namespace Business.Concrete
 
         public IResult Add(Brand brand)
         {
-            throw new NotImplementedException();
-        }
+            if (brand.Name.Length<2)
+            {
+                return new  ErrorResult(Messages.BrandAddedFailed);
+            }
+            _brandDal.Add(brand);
 
+            return new SuccessResult(Messages.BrandAdded);
+        
+         }
+
+        //public IResult Delete(Brand brand)
+        //{
+        //    if (brand.Id==5)
+        //    {
+        //        return new ErrorResult("Bu numaralı id silinemez");
+        //    }
+
+        //    _brandDal.Delete(brand);
+        //    return new SuccessResult(Messages.BrandDeleted);
+        //}
+    
+    
         public IResult Delete(Brand brand)
         {
-            throw new NotImplementedException();
+            if (brand.Id==6)
+            {
+                return new ErrorResult(Messages.BrandDeletedFailed);
+            }
+            _brandDal.Delete(brand);
+            return new SuccessResult(Messages.BrandDeleted);
+             
+                
         }
 
         public IDataResult<List<Brand>> GetAll()
@@ -36,7 +63,9 @@ namespace Business.Concrete
 
         public IDataResult<Brand> GetById(int brandId)
         {
-            throw new NotImplementedException();
+            
+            //return new DataResult<Brand>(_brandDal.Get(p => p.Id == brandId),true,Messages.BrandIded);
+            return new SuccessDataResult<Brand>(_brandDal.Get(p => p.Id == brandId));
         }
 
         public IResult Update(Brand brand)

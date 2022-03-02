@@ -40,7 +40,6 @@ namespace Business.Concrete
         public IDataResult<Customers> GetById(int customerId)
         {
             return new SuccessDataResult<Customers>(_customerDal.Get(p => p.Id == customerId));
-
         }
 
         public IResult Update(Customers customer)

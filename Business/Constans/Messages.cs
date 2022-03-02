@@ -11,6 +11,10 @@ namespace Business.Constans
         public static string BrandAdded = "Marka başarıyla eklendi.";
         public static string BrandUpdated = "Marka başarıyla güncellendi.";
         public static string BrandDeleted = "Marka başarıyla silindi.";
+        public static string BrandIded = " Bu idli marka yoktur .";
+        public static string BrandAddedFailed = "Eklemek istediğiniz marka kriterlere uygun değildiri.";
+        public static string BrandDeletedFailed = "Eklemek istediğiniz marka silinemeye uygun değildir ";
+
 
         public static string CarAdded = "Araba başarıyla eklendi.";
         public static string CarUpdated = "Araba başarıyla güncellendi.";

@@ -25,7 +25,6 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.CarAddingFailed);
             }
-
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
             }
@@ -53,6 +52,7 @@ namespace Business.Concrete
 
         public IDataResult<Car> GetById(int carId)
         {
+           
             return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == carId));
         }
 

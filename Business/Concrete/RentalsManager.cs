@@ -63,6 +63,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Rentals>(_rentalsDal.Get(p => p.Id == rentalId));
         }
 
+
         public IResult Update(Rentals rental)
         {
             _rentalsDal.Update(rental);
